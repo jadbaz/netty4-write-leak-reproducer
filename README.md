@@ -1,9 +1,10 @@
 A reproducer for a bug with Netty 4.
 
 To reproduce this bug yourself:
-Clone this project
-./gradlew build
-java -jar build/libs/<latest>.jar
+1. Clone this project
+2. chmod +x gradlew
+3. ./gradlew build
+4. java -jar build/libs/<latest>.jar
 
 Program options available:
 1. -Dtest.batch: The number of messages to send before sleep
