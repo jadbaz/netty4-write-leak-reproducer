@@ -1,0 +1,22 @@
+group 'netty-leak'
+version '1.0'
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile 'io.netty:netty-all:4.1.9.Final'
+}
+
+jar {
+    from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    manifest {
+        attributes(
+                'Main-Class': 'Main'
+        )
+    }
+}
