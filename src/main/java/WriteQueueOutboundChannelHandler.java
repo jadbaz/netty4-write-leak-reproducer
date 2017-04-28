@@ -15,12 +15,14 @@ public class WriteQueueOutboundChannelHandler extends ChannelDuplexHandler {
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
         messageQueue.clear();
         Main.unregisterChannel(ctx.channel());
+        ctx.fireChannelInactive();
     }
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) {
-        Main.registerChannel(ctx.channel());
         this.ctx = ctx;
+        Main.registerChannel(ctx.channel());
+        ctx.fireChannelActive();
     }
 
     @Override
