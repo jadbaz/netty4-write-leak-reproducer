@@ -39,8 +39,8 @@ public class Main {
 
         b.bind(Config.PORT);
         logger.info("Binding on port " + Config.PORT);
-        (new Thread(new Writer())).start();
         (new Thread(new LogUsage())).start();
+        (new Thread(new Writer())).start();
     }
 
     public static void registerChannel(Channel channel) {

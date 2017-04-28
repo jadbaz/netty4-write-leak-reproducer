@@ -16,6 +16,7 @@ public class Writer implements Runnable{
     @Override
     public void run() {
         try {
+            Thread.sleep(2000);
             long x = 0;
             while (true) {
                 MSG = randomString(Config.MESSAGE_CHARACTER_LENGTH)+Config.MESSAGE_DELIMITER;
