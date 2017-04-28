@@ -9,6 +9,7 @@ To reproduce this bug yourself:
 Program options available:
 1. -Dtest.batch: The number of messages to send before sleep
 2. -Dtest.sleep: The sleep duration in millis after sending 1 batch (test.batch)
-2. -Dtest.length: The length of a single message
-3. -Dtest.log_time: The log interval in millis
-4. -Dtest.port: The port to run the server
+3. -Dtest.length: The length of a single message
+4. -Dtest.random: Generate random strings or not (true/false)
+5. -Dtest.log_time: The log interval in millis
+6. -Dtest.port: The port to run the server
