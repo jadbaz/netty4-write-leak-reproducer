@@ -29,7 +29,7 @@ public class LogUsage implements Runnable{
         int messageReceivedAvg = (int)((Main.getMessagesReceived() - lastMessageReceivedCount)/dtSec);
         int messageSentAvg = (int)((Main.getMessagesSent() - lastMessageSentCount)/dtSec);
 
-        return String.format("%d,%d,%d,%d,%d,%d,%d",System.currentTimeMillis(),total,max,free,used,messageReceivedAvg,messageSentAvg);
+        return String.format("%d,%d,%d,%d,%d,%d,%d,%d,%d",System.currentTimeMillis(),total,max,free,used,messageReceivedAvg,messageSentAvg,Main.getMessagesReceived(),Main.getMessagesSent());
     }
 }
 
