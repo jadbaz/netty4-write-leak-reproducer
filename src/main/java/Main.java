@@ -54,7 +54,6 @@ public class Main {
     }
 
     public static void write(String msg) {
-        msg += "\n";
         messageReceived();
         if (!channels.isEmpty()) {
             channels.write(msg);
