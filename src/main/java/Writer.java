@@ -11,16 +11,16 @@ public class Writer implements Runnable{
         return sb.toString();
     }
 
-//    private static final String MSG = new String(new char[Config.MESSAGE_CHARACTER_LENGTH]).replace("\0", "A")+Config.MESSAGE_DELIMITER;
-    private String MSG;
+    private static final String STATIC_MSG = new String(new char[Config.MESSAGE_CHARACTER_LENGTH]).replace("\0", "A")+Config.MESSAGE_DELIMITER;
+    private String msg;
     @Override
     public void run() {
         try {
             Thread.sleep(2000);
             long x = 0;
             while (true) {
-                MSG = randomString(Config.MESSAGE_CHARACTER_LENGTH)+Config.MESSAGE_DELIMITER;
-                Main.write(MSG);
+                msg = Config.GENERATE_RANDOM_STRING ? randomString(Config.MESSAGE_CHARACTER_LENGTH)+Config.MESSAGE_DELIMITER : STATIC_MSG;
+                Main.write(msg);
                 if (x % Config.WRITE_BATCH_SIZE == 0) {
                     Thread.sleep(Config.SLEEP_BETWEEN_BATCHES_MILLIS);
                 }
