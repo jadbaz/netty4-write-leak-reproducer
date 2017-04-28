@@ -57,7 +57,7 @@ public class Main {
         msg += "\n";
         messageReceived();
         if (!channels.isEmpty()) {
-            channels.writeAndFlush(msg);
+            channels.write(msg);
         }
     }
 
